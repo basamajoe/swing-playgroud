@@ -105,19 +105,16 @@ public class PhyhsicalPersonCreator extends JFrame {
 			born = new Date();
 		}
 		
-		PhysicalPerson pperson = new PhysicalPerson()
-				.setName(nameValue)
-				.setMiddleName(middleNameValue)
-				.setArtisticName(artisticNameValue)
-				.setBorn(born)
-				.setGender(gender.getSelected());
-
-		String[] surnames = surnamesValue.split("\\s+");
-        pperson.setSurname("");
-		for(String surname: surnames){
-			pperson.addSurname(surname);
-		}
-
-		KnownInstances.knownPeople.add(pperson);
+		
+		
+		KnownInstances.knownPeople.add(
+				new PhysicalPerson()
+					.setName(nameValue)
+					.setMiddleName(middleNameValue)
+					.addSurname(surnamesValue)
+					.setArtisticName(artisticNameValue)
+					.setBorn(born)
+					.setGender(gender.getSelected())
+		);
 	}
 }

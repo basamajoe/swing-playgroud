@@ -44,13 +44,7 @@ public class PhysicalPerson extends Person {
 	public String[] getSurnames() {
 		return surnames.toArray(new String[0]);
 	}
-
-	public PhysicalPerson setSurname(String surname){
-		surnames.clear();
-		surnames.add(surname);
-		return this;
-	}
-
+	
 	public PhysicalPerson addSurname(String surname) {
 		surnames.add(surname);
 		return this;

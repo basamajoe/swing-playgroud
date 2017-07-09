@@ -47,7 +47,7 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PersonCreator pc = new PersonCreator();
-				utils.WindowUtility.createFrame(pc);
+				WindowUtility.createFrame(pc);
 			}
 		});
 		centerPanel.add(createPerson);
@@ -57,7 +57,7 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PersonLister pl = new PersonLister();
-				utils.WindowUtility.createFrame(pl);
+				WindowUtility.createFrame(pl);
 			}
 		});
 		centerPanel.add(listPerson);
@@ -115,6 +115,8 @@ public class MainWindow extends JFrame {
 		}
 		return null;
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		MainWindow mainWindow = new MainWindow();

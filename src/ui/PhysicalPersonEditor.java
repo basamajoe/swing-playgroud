@@ -46,12 +46,8 @@ public class PhysicalPersonEditor extends JFrame {
 		topPanel.add(name);
 		middleName = new TextWithLabel("Segundo nombre: ", 30, p.getMiddleName());
 		topPanel.add(middleName);
-		String surnamesStr = "";
-		for(String surname: p.getSurnames()){
-			surnamesStr += " " + surname;
-		}
-		surnamesStr = surnamesStr.trim();
-		surnames = new TextWithLabel("Apellidos: ", 80, surnamesStr);
+		//surnames = new TextWithLabel("Apellidos: ", 80, p.getSurnames());
+		surnames = new TextWithLabel("Apellidos: ", 80);
 		topPanel.add(surnames);
 		artisticName = new TextWithLabel("Nombre artistico: ", 30, p.getArtisticName());
 		topPanel.add(artisticName);
@@ -105,21 +101,16 @@ public class PhysicalPersonEditor extends JFrame {
 			born = new Date();
 		}
 
-        KnownInstances.knownPeople.remove(pperson);
-
 		//Desam els nous valors
         pperson.setName(nameValue)
                 .setMiddleName(middleNameValue)
+                .addSurname(surnamesValue)
                 .setArtisticName(artisticNameValue)
                 .setBorn(born)
                 .setGender(gender.getSelected());
-
-		String[] surnames = surnamesValue.split("\\s+");
-		pperson.setSurname("");
-		for(String surname: surnames){
-			pperson.addSurname(surname);
-		}
-
+		
+		
+		KnownInstances.knownPeople.remove(pperson);
         KnownInstances.knownPeople.add(pperson);
 	}
 }

@@ -113,25 +113,7 @@ public final class KnownInstances {
 	}
 
     public static void generateKnownPeople() {
-		for(int i=0;i<20;i++) {
-            PhysicalPerson tapes1 = new PhysicalPerson()
-                    .setName("Love"+i)
-                    .setMiddleName("Tapes")
-                    .addSurname("Binissalem")
-                    .setArtisticName("Like tapitas")
-                    .setBorn(new Date(22, 1, 6))
-                    .setGender(Gender.MALE);
-            PhysicalPerson tapes2 = new PhysicalPerson()
-                    .setName("Like"+i)
-                    .setMiddleName("Tapes")
-                    .addSurname("Gratis")
-                    .setArtisticName("Like tapas")
-                    .setBorn(new Date(28, 1, 6))
-                    .setGender(Gender.MALE);
-            knownPeople.add(tapes1);
-            knownPeople.add(tapes2);
-        }
-		knownPeople.add(
+        knownPeople.add(
                 new PhysicalPerson()
                         .setName("William")
                         .setMiddleName("Bruce")

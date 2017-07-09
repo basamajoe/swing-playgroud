@@ -30,11 +30,12 @@ public class PersonLister extends JFrame implements ListSelectionListener {
 
         jf = this;
 
-		KnownInstances.generateKnownPeople();
+		
+        KnownInstances.generateKnownPeople();
 
+	
         listModel = new DefaultListModel();
-        //afegim persones a la llista si es buida
-
+        //mostramos todas las personas creadas en una llista
         for(Person person: KnownInstances.knownPeople){
             listModel.addElement(person);
         }
